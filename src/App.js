@@ -1,11 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Shared/Navbar';
+import { Routes, Route } from "react-router-dom";
+import Home from './Components/Home/Home';
+import Books from './Components/Books/Books';
+import About from './Components/About/About';
+import AddBooks from './Components/Add_Books/AddBooks';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-7xl ">Hello </h1>
-      <button class="btn my-5 btn-primary">Button</button>
+      <Navbar />
+      
+        <Routes>
+          <Route exact path={"home"||"/"} element={<Home />} />
+          <Route exact path="/books" element={<Books />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/add" element={<AddBooks />} />
+        </Routes>
+      
+     
     </div>
   );
 }
